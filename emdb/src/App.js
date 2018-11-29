@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+
+const welcome = "Welcome to React";
 
 class App extends Component {
   render() {
@@ -8,6 +10,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
+          <Welcome />
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
@@ -22,6 +25,12 @@ class App extends Component {
         </header>
       </div>
     );
+  }
+}
+
+class Welcome extends Component {
+  render() {
+    return <h1 className="App-title">{welcome}</h1>;
   }
 }
 
