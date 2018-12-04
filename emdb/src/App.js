@@ -3,6 +3,16 @@ import logo from "./logo.svg";
 import "./App.css";
 
 class App extends Component {
+  state = {
+    input: "Hello"
+  };
+
+  updateInput = event => {
+    this.setState({
+      input: event.target.value
+    });
+  };
+
   submit = () => {
     console.log(this.text.value);
   };
@@ -16,6 +26,12 @@ class App extends Component {
           <h3>
             Edit <code>src/App.js</code> and save to reload.
             <br />
+            <p>{this.state.input}</p>
+            <input
+              type="text"
+              onChange={this.updateInput}
+              value={this.state.input}
+            />
             <input type="text" ref={input => (this.text = input)} />
             <button onClick={this.submit}>Show Value</button>
           </h3>
