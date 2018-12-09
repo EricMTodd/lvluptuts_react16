@@ -13,7 +13,6 @@ class MoviesList extends Component {
         "https://api.themoviedb.org/3/discover/movie?api_key=0604d3ffec907684cdf29df1d03a0c74&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1"
       );
       const movies = await res.json();
-      console.log("movies:", movies);
       this.setState({
         movies: movies.results
       });
